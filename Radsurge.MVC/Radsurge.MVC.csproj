@@ -132,6 +132,16 @@
     <Content Include="Content\Font-Awesome\css\font-awesome.css" />
     <Content Include="Content\Font-Awesome\css\font-awesome.min.css" />
     <Content Include="Content\Font-Awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Images\computer.jpg" />
+    <Content Include="Content\Images\downloads-bg.jpg" />
+    <Content Include="Content\Images\intro-bg-hi.jpg" />
+    <Content Include="Content\Images\intro-bg.jpg" />
+    <Content Include="Content\Images\intro-bg2.jpg" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\map-marker.png" />
+    <Content Include="Content\Images\market.jpg" />
+    <Content Include="Content\Images\type-away.jpg" />
     <Content Include="Content\Js\bootstrap.js" />
     <Content Include="Content\Js\bootstrap.min.js" />
     <Content Include="Content\Js\grayscale.js" />
@@ -226,8 +236,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Fonts\" />
-    <Folder Include="Content\Images\" />
     <Folder Include="Content\Scripts\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -268,6 +276,11 @@
     <None Include="Content\Font-Awesome\scss\_spinning.scss" />
     <None Include="Content\Font-Awesome\scss\_stacked.scss" />
     <None Include="Content\Font-Awesome\scss\_variables.scss" />
+    <None Include="Content\Fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Content\Fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Content\Fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Content\Images\Thumbs.db" />
     <None Include="Content\Less\grayscale.less" />
     <None Include="Content\Less\mixins.less" />
     <None Include="Content\Less\variables.less" />
