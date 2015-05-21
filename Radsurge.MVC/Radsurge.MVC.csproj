@@ -231,7 +231,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -286,8 +288,6 @@
     <None Include="Content\Less\grayscale.less" />
     <None Include="Content\Less\mixins.less" />
     <None Include="Content\Less\variables.less" />
-    <None Include="Web.config.install.xdt" />
-    <None Include="Web.config.uninstall.xdt" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
