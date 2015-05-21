@@ -1,4 +1,6 @@
-﻿.cf:before, .cf:after{
+﻿@import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+.cf:before, .cf:after{
       content:"";
       display:table;
     }
@@ -36,9 +38,9 @@
         border: 0;
         background: #eee;
         color:Black;
-        -moz-border-radius: 3px 3px 3px 3px;
-        -webkit-border-radius: 3px 3px 3px 3px;
-        border-radius: 3px 3px 3px 3px;      
+        -moz-border-radius: 3px 0px 0px 3px;
+        -webkit-border-radius: 3px 0px 0px 3px;
+        border-radius: 3px 0px 0px 3px;      
     }
     
     .form-wrapper input:focus {
@@ -67,15 +69,18 @@
         font-style: italic;
     }    
     
-    .form-wrapper button {
-		overflow: visible;
+    .form-wrapper button 
+    {       
+        padding: .5em 1em; 
+        white-space: nowrap; 
+		overflow: hidden;
         position: relative;
         float: right;
         border: 0;
         padding: 0;
         cursor: pointer;
         height: 40px;
-        width: 110px;
+        width: 40px;
         font: bold 15px/40px 'Arial', 'trebuchet MS', 'Tahoma';
         color: #fff;
         text-transform: uppercase;
@@ -96,13 +101,19 @@
     }
     
     .form-wrapper button:before {
-        content: '';
-        position: absolute;
-        border-width: 8px 8px 8px 0;
-        border-style: solid solid solid none;
-        border-color: transparent #d83c3c transparent;
-        top: 12px;
-        left: -6px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          font-family: 'FontAwesome';
+          content: '\f002';
+          text-align: center;
+          color: #fff;
+          border-radius: 5px;
+          -webkit-font-smoothing: subpixel-antialiased;
+          font-smooth: always;
     }
     
     .form-wrapper button:hover:before{
