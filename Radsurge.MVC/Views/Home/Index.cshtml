@@ -20,6 +20,8 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href='@Url.Content("~/Content/Styles/grayscale.css")'>
+    <link rel="stylesheet" href='@Url.Content("~/Content/Styles/search.css")'>
+    
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -80,6 +82,10 @@
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading"><img src='@Url.Content("~/Content/Images/logo.png")' width="70%" height="70%"/></h1>
                         <!--<p class="intro-text">A fresh and fruitful connection between independent developers and small businesses.</p>-->
+                        <form class="form-wrapper cf">
+	                        <input type="text" placeholder="Search here..." />
+	                        <button type="submit">Search</button>
+                        </form>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
