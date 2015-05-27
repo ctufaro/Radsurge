@@ -85,7 +85,7 @@
                             @using (Html.BeginForm("index", "search", FormMethod.Post, new { @class = "form-wrapper cf" }))
                             {
                                 <div style="display: table-cell; width: 100%;">
-                                    @Html.TextBox("searchTxt", "", new { placeholder = "Stuff you love...", name = "searchTxt" })
+                                    @Html.TextBox("SearchTerm", "", new { placeholder = "Stuff you love...", name = "SearchTerm" })
                                 </div>
 	                            <div style="display: table-cell; width: 100%;">
                                     <button type="submit"></button>

@@ -8,12 +8,30 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Search Results</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Radsurge Results</title>
+    <link rel="stylesheet" href='@Url.Content("~/Content/Styles/searchresults.css")'>
+
 </head>
 <body>
-    <div>
-        <h2>Results for @Html.DisplayFor(model => model.SearchTerm)</h2>
+    
+    <div class="results-search">
+        <img src='@Url.Content("~/Content/Images/logo.png")' class="logo" alt="Radsurge" width="150" style="float:left"/>
+        @using (Html.BeginForm("index", "search", FormMethod.Post, new { @class = "form-wrapper" }))
+        {
+            @Html.TextBoxFor(model => model.SearchTerm)
+            <button type="submit"></button>
+        }        
     </div>
+
+    <div class="results-content">
+        0 Results Returned For: @Html.DisplayFor(model => model.SearchTerm)
+    </div>
+
 </body>
 </html>

@@ -1,0 +1,84 @@
+﻿@import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+body 
+{
+    background-color:Black;
+}
+
+.results-content
+{
+    text-align:left;
+    color:White;
+    clear:both;
+    padding:10px 6px;
+}
+
+.results-search
+{
+    
+}
+    
+.form-wrapper 
+{
+    float:left;
+    width: 100%;
+    max-width:460px;
+    padding: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-top:5px;
+}
+    
+.form-wrapper input 
+{
+    float: left;
+    width: 80%;
+    height: 10px;
+    padding: 10px 5px;
+    font: 16px 'Arial', 'trebuchet MS', 'Tahoma';
+    border: 0;
+    -moz-border-radius: 3px 0px 0px 3px;
+    -webkit-border-radius: 3px 0px 0px 3px;
+    border-radius: 3px 0px 0px 3px;      
+}
+
+.form-wrapper button 
+{       
+    padding: .5em 1em; 
+    white-space: nowrap; 
+	overflow: hidden;
+    position: relative;
+    float: left;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    font: bold 15px/40px 'Arial', 'trebuchet MS', 'Tahoma';
+    color: #fff;
+    text-transform: uppercase;
+    background: #d83c3c;
+    -moz-border-radius: 0 3px 3px 0;
+    -webkit-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;      
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+}   
+
+.form-wrapper button:before 
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-family: 'FontAwesome';
+    content: '\f002';
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-smooth: always;
+}
+      

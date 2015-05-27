@@ -21,7 +21,7 @@ namespace Radsurge.MVC.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Index(FormCollection collection)
         {
-            string q = collection["searchTxt"];
+            string q = collection["SearchTerm"];
             SearchResults sr = new SearchResults { SearchTerm = q };
             return View(sr);
         }
