@@ -82,11 +82,16 @@
                     <div class="col-md-8 col-md-offset-2">
                         <div class="brand-heading"><img src='@Url.Content("~/Content/Images/logo.png")' width="70%" height="70%"/></div>
                         <!--<p class="intro-text">A fresh and fruitful connection between independent developers and small businesses.</p>-->
-                        <form class="form-wrapper cf">
-	                        <div style="display: table-cell; width: 100%;"><input type="text" placeholder="Search here..." /></div>
-	                        <div style="display: table-cell; width: 100%;"><button type="submit"></button></div>
-                        </form>
-                        <a href="#about" class="btn btn-circle page-scroll">
+                            @using (Html.BeginForm("index", "search", FormMethod.Post, new { @class = "form-wrapper cf" }))
+                            {
+                                <div style="display: table-cell; width: 100%;">
+                                    @Html.TextBox("searchTxt", "", new { placeholder = "Stuff you love...", name = "searchTxt" })
+                                </div>
+	                            <div style="display: table-cell; width: 100%;">
+                                    <button type="submit"></button>
+                                </div>
+                            }
+                            <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
                     </div>
