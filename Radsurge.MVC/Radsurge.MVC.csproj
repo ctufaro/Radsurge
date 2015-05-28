@@ -143,6 +143,8 @@
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\map-marker.png" />
     <Content Include="Content\Images\market.jpg" />
+    <Content Include="Content\Images\Results\Dipped.jpeg" />
+    <Content Include="Content\Images\Results\Kimiko.png" />
     <Content Include="Content\Images\type-away.jpg" />
     <Content Include="Content\Js\bootstrap.js" />
     <Content Include="Content\Js\bootstrap.min.js" />
@@ -277,11 +279,11 @@
     <None Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
     <None Include="Content\Fonts\glyphicons-halflings-regular.woff" />
     <None Include="Content\Fonts\glyphicons-halflings-regular.woff2" />
-    <None Include="Content\Images\Thumbs.db" />
     <None Include="Content\Less\grayscale.less" />
     <None Include="Content\Less\mixins.less" />
     <None Include="Content\Less\variables.less" />
     <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Search\Details.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

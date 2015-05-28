@@ -4,19 +4,6 @@ body
 {
     background-color:Black;
 }
-
-.results-content
-{
-    text-align:left;
-    color:White;
-    clear:both;
-    padding:10px 6px;
-}
-
-.results-search
-{
-    
-}
     
 .form-wrapper 
 {
@@ -81,4 +68,47 @@ body
     -webkit-font-smoothing: subpixel-antialiased;
     font-smooth: always;
 }
+
+.results-search
+{
+    
+}
+
+.results-content
+{
+    text-align:left;
+    color:White;
+    clear:both;
+    padding:10px 6px;
+}
+
+
+.container
+{
+    padding: 2px 2px 2px 2px;
+}
+
+.game
+{    
+    float:left;
+}
+
+.gpic
+{
+    max-width: 100%;
+}
+
+
+.ad
+{    
+    float:left;
+}
+
+.adpic
+{
+    max-width: 100%;
+}
+
+
+
       
