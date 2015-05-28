@@ -21,7 +21,7 @@
 <body>
     
     <div class="results-search">
-        <img src='@Url.Content("~/Content/Images/logo.png")' class="logo" alt="Radsurge" width="150" style="float:left"/>
+        <a href='http://radsurge.com'><img src='@Url.Content("~/Content/Images/logo.png")' class="logo" alt="Radsurge" width="150" style="float:left"/></a>
         @using (Html.BeginForm("index", "search", FormMethod.Post, new { @class = "form-wrapper" }))
         {
             @Html.TextBoxFor(model => model.SearchTerm)
@@ -32,9 +32,55 @@
     <div class="results-content">
         <div class="container game">
             <img src='@Url.Content("~/Content/Images/Results/Kimiko.jpg")' class="gpic"/>
+            <p>
+                Game: Kimiko Forgotten Forest<br />
+                Download Links: http://www.google.com<br />
+                Redeemable: Beat Level 1
+            </p>
         </div>        
         <div class="container ad">
             <img src='@Url.Content("~/Content/Images/Results/Dipped.jpg")' class="adpic" />
+            <p>
+                Vendor: Dipped Chocolates<br />
+                Url: http://www.google.com<br />
+                Redeemable: Beat Level 1
+            </p>
+        </div>
+    </div>
+    <div class="results-content">
+        <div class="container game">
+            <img src='@Url.Content("~/Content/Images/Results/Kimiko.jpg")' class="gpic"/>
+            <p>
+                Game: Kimiko Forgotten Forest<br />
+                Download Links: http://www.google.com<br />
+                Redeemable: Beat Level 1
+            </p>
+        </div>        
+        <div class="container ad">
+            <img src='@Url.Content("~/Content/Images/Results/Dipped.jpg")' class="adpic" />
+            <p>
+                Vendor: Dipped Chocolates<br />
+                Url: http://www.google.com<br />
+                Redeemable: Beat Level 1
+            </p>
+        </div>
+    </div>
+    <div class="results-content">
+        <div class="container game">
+            <img src='@Url.Content("~/Content/Images/Results/Kimiko.jpg")' class="gpic"/>
+            <p>
+                Game: Kimiko Forgotten Forest<br />
+                Download Links: http://www.google.com<br />
+                Redeemable: Beat Level 1
+            </p>
+        </div>        
+        <div class="container ad">
+            <img src='@Url.Content("~/Content/Images/Results/Dipped.jpg")' class="adpic" />
+            <p>
+                Vendor: Dipped Chocolates<br />
+                Url: http://www.google.com<br />
+                Redeemable: Beat Level 1
+            </p>
         </div>
     </div>
 
