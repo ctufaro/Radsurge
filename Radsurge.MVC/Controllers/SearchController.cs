@@ -9,21 +9,16 @@ namespace Radsurge.MVC.Controllers
 {
     public class SearchController : Controller
     {
-        //
         // GET: /Search/
         public ActionResult Index(string q)
         {
-            ViewBag.SearchTerm = q;
-            SearchResults sr = new SearchResults { SearchTerm = q };
-            return View(sr);
+            return View(new SearchResults { SearchTerm = q });
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Index(FormCollection collection)
         {
-            string q = collection["SearchTerm"];
-            SearchResults sr = new SearchResults { SearchTerm = q };
-            return View(sr);
+            return RedirectToAction("Index", "Search", new { q = collection["SearchTerm"] });
         }
 
     }

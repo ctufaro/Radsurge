@@ -47,7 +47,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i>  <!--<span class="light">Start</span> Bootstrap-->
+                    <i class="fa fa-heart fa-3"></i>  <!--<span class="light">Start</span> Bootstrap-->
                 </a>
             </div>
 
@@ -82,7 +82,7 @@
                     <div class="col-md-8 col-md-offset-2">
                         <div class="brand-heading"><img src='@Url.Content("~/Content/Images/logo.png")' width="70%" height="70%"/></div>
                         <!--<p class="intro-text">A fresh and fruitful connection between independent developers and small businesses.</p>-->
-                            @using (Html.BeginForm("index", "search", FormMethod.Post, new { @class = "form-wrapper cf" }))
+                            @using (Html.BeginForm("Search", "Home", FormMethod.Post, new { @class = "form-wrapper cf" }))
                             {
                                 <div style="display: table-cell; width: 100%;">
                                     @Html.TextBox("SearchTerm", "", new { placeholder = "Stuff you love...", name = "SearchTerm" })
