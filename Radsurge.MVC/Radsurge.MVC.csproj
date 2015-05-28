@@ -143,8 +143,8 @@
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\map-marker.png" />
     <Content Include="Content\Images\market.jpg" />
-    <Content Include="Content\Images\Results\Dipped.jpeg" />
-    <Content Include="Content\Images\Results\Kimiko.png" />
+    <Content Include="Content\Images\Results\Dipped.jpg" />
+    <Content Include="Content\Images\Results\Kimiko.jpg" />
     <Content Include="Content\Images\type-away.jpg" />
     <Content Include="Content\Js\bootstrap.js" />
     <Content Include="Content\Js\bootstrap.min.js" />
