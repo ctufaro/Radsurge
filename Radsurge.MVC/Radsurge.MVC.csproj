@@ -146,6 +146,7 @@
     <Content Include="Content\Images\Results\Dipped.jpg" />
     <Content Include="Content\Images\Results\Kimiko.jpg" />
     <Content Include="Content\Images\Results\SearchResult.png" />
+    <Content Include="Content\Images\Results\SearchResultSingle.png" />
     <Content Include="Content\Images\type-away.jpg" />
     <Content Include="Content\Js\bootstrap.js" />
     <Content Include="Content\Js\bootstrap.min.js" />

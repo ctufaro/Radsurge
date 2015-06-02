@@ -79,7 +79,15 @@ body
     text-align:left;
     color:White;
     clear:both;
-    padding:10px 6px;
+    padding:10px 10px;
+    border: 1px solid #666;
+    background: #222;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    max-width: 700px;
+    margin-left:4px;
+    margin-bottom:10px;
 }
 
 
@@ -90,23 +98,23 @@ body
 
 .game
 {    
-    float:left;
+    clear:both;
 }
 
 .gpic
 {
-    max-width: 100%;
+    max-width: 50%;
 }
 
 
 .ad
 {    
-    float:left;
+    clear:both;
 }
 
 .adpic
 {
-    max-width: 100%;
+    max-width: 50%;
 }
 
 
