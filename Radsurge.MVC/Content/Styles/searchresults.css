@@ -85,21 +85,44 @@ body
     -webkit-border-radius: 3px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    max-width: 550px;
+    max-width: 540px;
     margin-left:4px;
     margin-bottom:10px;
+    overflow: hidden; 
 }
 
-
-.game
-{    
-    
-}
-
-.game img
+.wrapper 
 {
+    width: 100%;
+}
+
+.wrapper:after 
+{
+    clear: both;
+    display: block;
+    content: ' ';
+}
+
+.left_container, .right_container 
+{
+    float: left;
     max-width: 50%;
-    width:125px;
+    height: 100%;
+}
+    
+.left_container .content 
+{
+    height: 50%;        
+}
+
+.left_container img 
+{
+    width:125px;     
+}
+
+.right_container .content 
+{
+    padding-left:8px;
 }
 
 
