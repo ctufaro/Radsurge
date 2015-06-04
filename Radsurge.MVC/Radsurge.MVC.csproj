@@ -155,7 +155,9 @@
     <Content Include="Content\Js\jquery.js" />
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Styles\bootstrap.min.css" />
+    <Content Include="Content\Styles\buttons.css" />
     <Content Include="Content\Styles\grayscale.css" />
+    <Content Include="Content\Styles\ratings.css" />
     <Content Include="Content\Styles\search.css" />
     <Content Include="Content\Styles\searchresults.css" />
     <Content Include="Content\Themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
