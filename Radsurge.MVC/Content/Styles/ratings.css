@@ -4,6 +4,10 @@
     font-size: 0;
     position: relative;
 }
+.rating.pad
+{
+    padding-top:5px;
+}
 .rating-input {
     float: right;
     width: 16px;
@@ -26,3 +30,4 @@
     height: 16px;
     background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
 }
+

@@ -128,6 +128,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Results.cs" />
     <Compile Include="Models\SearchResults.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -145,10 +146,7 @@
     <Content Include="Content\Images\map-marker.png" />
     <Content Include="Content\Images\market.jpg" />
     <Content Include="Content\Images\Results\Dipped.jpg" />
-    <Content Include="Content\Images\Results\Kimiko.jpg" />
-    <Content Include="Content\Images\Results\SearchResult.png" />
-    <Content Include="Content\Images\Results\SearchResultSingle.png" />
-    <Content Include="Content\Images\Results\SearchResultSingleX.png" />
+    <Content Include="Content\Images\Results\Kimiko.png" />
     <Content Include="Content\Images\type-away.jpg" />
     <Content Include="Content\Js\bootstrap.js" />
     <Content Include="Content\Js\bootstrap.min.js" />

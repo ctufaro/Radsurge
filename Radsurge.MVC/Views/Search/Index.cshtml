@@ -31,27 +31,30 @@
         }        
     </div>
 
+    @foreach (var item in Model.ReturnedResults)
+    {
+
     <div class="results-content">
         <div class="wrapper">
             <div class="left_container">
                 <div class="content">
-                    <img src='@Url.Content("~/Content/Images/Results/SearchResultSingleX.png")' />
+                    <img src='@Url.Content(item.MerchantProductImage)' class="clip"/>
                 </div>
                 <div class="content">
-                    <img src='@Url.Content("~/Content/Images/Results/SearchResultSingleX.png")' />
+                    <img src='@Url.Content(item.DeveloperProductImage)' />
                 </div>
             </div>
             <div class="right_container">
                 <div class="content">
-                    <div class="deal">15% Off Dipped Chocolate</div>
-                    <div class="context"><i class="icon-shopping-cart"></i>&nbsp;Dipped Chocolate Designs</div>
-                    <div class="title">Kimiko Forgotten Forest</div>
-                    <div class="context"><i class="icon-mobile-phone"></i>&nbsp;Play Round 1 - Get High Score</div>
+                    <div class="deal">@item.MerchantIncentive</div>
+                    <div class="context"><i class="icon-shopping-cart"></i>&nbsp;@item.MerchantName</div>
+                    <div class="title">@item.DeveloperProductName</div>
+                    <div class="context"><i class="icon-mobile-phone"></i>&nbsp;@item.DeveloperProductClaim</div>
 
-                    <div style="float:left">
-                        <div style="padding:5px 0px 5px 0px;"><button class="color red button">Download</button></div>
-                        <div style="padding:5px 0px 5px 0px;"><button class="color blue button">Vendor Site</button></div>
-                        <div class="rating" style="padding-top:5px;">
+                    <div class="ui">
+                        <div class="buttons"><button class="color red button">Download</button></div>
+                        <div class="buttons"><button class="color blue button">Vendor Site</button></div>
+                        <div class="rating pad">
                             <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1"/>
                                 <label for="rating-input-1-5" class="rating-star"></label>
                             <input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1"/>
@@ -69,7 +72,6 @@
         </div>
     </div>
 
-
-
+    }
 </body>
 </html>

@@ -122,9 +122,28 @@ right_container
     max-width:95%;
 }
 
+.left_container .clip
+{
+    width:150px;
+    height:129px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
 .right_container .content 
 {
-    padding-left:4px;
+    padding-left:44px;
+}
+
+.right_container .content .ui
+{
+    float:left;
+}
+
+.right_container .content .buttons
+{
+    padding:5px 0px 5px 0px;
 }
 
 
@@ -150,6 +169,11 @@ right_container
     font-family: Arial;
     font-size:12px;
     color:#F5F5DC;
+}
+
+.button-padding
+{
+    
 }
 
       
