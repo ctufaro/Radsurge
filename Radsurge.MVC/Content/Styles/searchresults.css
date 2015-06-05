@@ -124,8 +124,8 @@ right_container
 
 .left_container .clip
 {
-    width:150px;
-    height:129px;
+    /*width:150px;*/
+    /*height:129px;*/
     -webkit-border-radius: 3px;
     -moz-border-radius: 5px;
     border-radius: 5px;
