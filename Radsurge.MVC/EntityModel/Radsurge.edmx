@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RadsurgeEFModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="RadsurgeEFModelStoreContainer">
+          <EntitySet Name="DeveloperProducts" EntityType="RadsurgeEFModel.Store.DeveloperProducts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Developers" EntityType="RadsurgeEFModel.Store.Developers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Listings" EntityType="RadsurgeEFModel.Store.Listings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MerchantProducts" EntityType="RadsurgeEFModel.Store.MerchantProducts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Merchants" EntityType="RadsurgeEFModel.Store.Merchants" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="DeveloperProducts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DeveloperId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Type" Type="int" />
+          <Property Name="Url" Type="varchar" MaxLength="255" />
+          <Property Name="ImageUrl" Type="varchar" MaxLength="255" />
+          <Property Name="Keywords" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Developers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="LastName" Type="varchar" MaxLength="255" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Email" Type="varchar(max)" />
+          <Property Name="Url" Type="varchar" MaxLength="255" />
+          <Property Name="Keywords" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Listings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MerchantProductId" Type="int" Nullable="false" />
+          <Property Name="MerchantIncentive" Type="varchar(max)" />
+          <Property Name="DeveloperProductId" Type="int" Nullable="false" />
+          <Property Name="DeveloperClaim" Type="varchar(max)" />
+          <Property Name="RatingId" Type="int" />
+          <Property Name="RatingScore" Type="float" />
+        </EntityType>
+        <EntityType Name="MerchantProducts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MerchantId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Type" Type="int" />
+          <Property Name="Url" Type="varchar" MaxLength="255" />
+          <Property Name="ImageUrl" Type="varchar" MaxLength="255" />
+          <Property Name="Keywords" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Merchants">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="LastName" Type="varchar" MaxLength="255" />
+          <Property Name="Company" Type="varchar(max)" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="Url" Type="varchar" MaxLength="255" />
+          <Property Name="Keywords" Type="varchar(max)" />
+        </EntityType>
+        <Function Name="GetAllListings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RadsurgeEFModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="RadsurgeSQL" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DeveloperProducts" EntityType="RadsurgeEFModel.DeveloperProduct" />
+          <EntitySet Name="Developers" EntityType="RadsurgeEFModel.Developer" />
+          <EntitySet Name="Listings" EntityType="RadsurgeEFModel.Listing" />
+          <EntitySet Name="MerchantProducts" EntityType="RadsurgeEFModel.MerchantProduct" />
+          <EntitySet Name="Merchants" EntityType="RadsurgeEFModel.Merchant" />
+        </EntityContainer>
+        <EntityType Name="DeveloperProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeveloperId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="Url" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Keywords" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Developer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Url" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Keywords" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Listing">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MerchantProductId" Type="Int32" Nullable="false" />
+          <Property Name="MerchantIncentive" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="DeveloperProductId" Type="Int32" Nullable="false" />
+          <Property Name="DeveloperClaim" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="RatingId" Type="Int32" />
+          <Property Name="RatingScore" Type="Double" />
+        </EntityType>
+        <EntityType Name="MerchantProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MerchantId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="Url" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Keywords" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Merchant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Company" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Url" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Keywords" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RadsurgeEFModelStoreContainer" CdmEntityContainer="RadsurgeSQL">
+          <EntitySetMapping Name="DeveloperProducts">
+            <EntityTypeMapping TypeName="RadsurgeEFModel.DeveloperProduct">
+              <MappingFragment StoreEntitySet="DeveloperProducts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DeveloperId" ColumnName="DeveloperId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Developers">
+            <EntityTypeMapping TypeName="RadsurgeEFModel.Developer">
+              <MappingFragment StoreEntitySet="Developers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Listings">
+            <EntityTypeMapping TypeName="RadsurgeEFModel.Listing">
+              <MappingFragment StoreEntitySet="Listings">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MerchantProductId" ColumnName="MerchantProductId" />
+                <ScalarProperty Name="MerchantIncentive" ColumnName="MerchantIncentive" />
+                <ScalarProperty Name="DeveloperProductId" ColumnName="DeveloperProductId" />
+                <ScalarProperty Name="DeveloperClaim" ColumnName="DeveloperClaim" />
+                <ScalarProperty Name="RatingId" ColumnName="RatingId" />
+                <ScalarProperty Name="RatingScore" ColumnName="RatingScore" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MerchantProducts">
+            <EntityTypeMapping TypeName="RadsurgeEFModel.MerchantProduct">
+              <MappingFragment StoreEntitySet="MerchantProducts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MerchantId" ColumnName="MerchantId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Merchants">
+            <EntityTypeMapping TypeName="RadsurgeEFModel.Merchant">
+              <MappingFragment StoreEntitySet="Merchants">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Radsurge">
+        <EntityTypeShape EntityType="RadsurgeEFModel.DeveloperProduct" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="RadsurgeEFModel.Developer" Width="1.5" PointX="2.75" PointY="0.75" Height="2.3648893229166665" IsExpanded="true" />
+        <EntityTypeShape EntityType="RadsurgeEFModel.Listing" Width="1.5" PointX="4.75" PointY="0.75" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="RadsurgeEFModel.MerchantProduct" Width="1.5" PointX="0.75" PointY="4.75" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="RadsurgeEFModel.Merchant" Width="1.5" PointX="2.75" PointY="4.75" Height="2.5571907552083335" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
