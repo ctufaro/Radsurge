@@ -75,7 +75,7 @@
           <Property Name="Url" Type="varchar" MaxLength="255" />
           <Property Name="Keywords" Type="varchar(max)" />
         </EntityType>
-        <Function Name="GetAllListings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetSearchResults" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -86,6 +86,7 @@
           <EntitySet Name="Listings" EntityType="RadsurgeEFModel.Listing" />
           <EntitySet Name="MerchantProducts" EntityType="RadsurgeEFModel.MerchantProduct" />
           <EntitySet Name="Merchants" EntityType="RadsurgeEFModel.Merchant" />
+          <FunctionImport Name="GetSearchResults" ReturnType="Collection(RadsurgeEFModel.Results)" />
         </EntityContainer>
         <EntityType Name="DeveloperProduct">
           <Key>
@@ -150,6 +151,19 @@
           <Property Name="Url" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="Keywords" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
         </EntityType>
+        <ComplexType Name="Results">
+          <Property Type="Int32" Name="ListingId" Nullable="false" />
+          <Property Type="String" Name="MerchantName" Nullable="true" />
+          <Property Type="String" Name="MerchantUrl" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="MerchantProductName" Nullable="false" />
+          <Property Type="String" Name="MerchantProductImage" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="MerchantIncentive" Nullable="true" />
+          <Property Type="String" Name="DeveloperName" Nullable="true" MaxLength="511" />
+          <Property Type="String" Name="DeveloperProductName" Nullable="false" />
+          <Property Type="String" Name="DeveloperProductImage" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="DeveloperProductClaim" Nullable="true" />
+          <Property Type="String" Name="DeveloperProductUrl" Nullable="true" MaxLength="255" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -224,6 +238,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetSearchResults" FunctionName="RadsurgeEFModel.Store.GetSearchResults">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RadsurgeEFModel.Results">
+                <ScalarProperty Name="ListingId" ColumnName="ListingId" />
+                <ScalarProperty Name="MerchantName" ColumnName="MerchantName" />
+                <ScalarProperty Name="MerchantUrl" ColumnName="MerchantUrl" />
+                <ScalarProperty Name="MerchantProductName" ColumnName="MerchantProductName" />
+                <ScalarProperty Name="MerchantProductImage" ColumnName="MerchantProductImage" />
+                <ScalarProperty Name="MerchantIncentive" ColumnName="MerchantIncentive" />
+                <ScalarProperty Name="DeveloperName" ColumnName="DeveloperName" />
+                <ScalarProperty Name="DeveloperProductName" ColumnName="DeveloperProductName" />
+                <ScalarProperty Name="DeveloperProductImage" ColumnName="DeveloperProductImage" />
+                <ScalarProperty Name="DeveloperProductClaim" ColumnName="DeveloperProductClaim" />
+                <ScalarProperty Name="DeveloperProductUrl" ColumnName="DeveloperProductUrl" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

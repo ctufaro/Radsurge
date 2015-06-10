@@ -191,6 +191,18 @@ namespace Radsurge.MVC.EntityModel
 
         #endregion
 
+        #region Function Imports
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectResult<Results> GetSearchResults()
+        {
+            return base.ExecuteFunction<Results>("GetSearchResults");
+        }
+
+        #endregion
+
     }
 
     #endregion
@@ -1288,6 +1300,307 @@ namespace Radsurge.MVC.EntityModel
         #endregion
 
     
+    }
+
+    #endregion
+
+    #region ComplexTypes
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmComplexTypeAttribute(NamespaceName="RadsurgeEFModel", Name="Results")]
+    [DataContractAttribute(IsReference=true)]
+    [Serializable()]
+    public partial class Results : ComplexObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Results object.
+        /// </summary>
+        /// <param name="listingId">Initial value of the ListingId property.</param>
+        /// <param name="merchantProductName">Initial value of the MerchantProductName property.</param>
+        /// <param name="developerProductName">Initial value of the DeveloperProductName property.</param>
+        public static Results CreateResults(global::System.Int32 listingId, global::System.String merchantProductName, global::System.String developerProductName)
+        {
+            Results results = new Results();
+            results.ListingId = listingId;
+            results.MerchantProductName = merchantProductName;
+            results.DeveloperProductName = developerProductName;
+            return results;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ListingId
+        {
+            get
+            {
+                return _ListingId;
+            }
+            set
+            {
+                OnListingIdChanging(value);
+                ReportPropertyChanging("ListingId");
+                _ListingId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ListingId");
+                OnListingIdChanged();
+            }
+        }
+        private global::System.Int32 _ListingId;
+        partial void OnListingIdChanging(global::System.Int32 value);
+        partial void OnListingIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MerchantName
+        {
+            get
+            {
+                return _MerchantName;
+            }
+            set
+            {
+                OnMerchantNameChanging(value);
+                ReportPropertyChanging("MerchantName");
+                _MerchantName = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MerchantName");
+                OnMerchantNameChanged();
+            }
+        }
+        private global::System.String _MerchantName;
+        partial void OnMerchantNameChanging(global::System.String value);
+        partial void OnMerchantNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MerchantUrl
+        {
+            get
+            {
+                return _MerchantUrl;
+            }
+            set
+            {
+                OnMerchantUrlChanging(value);
+                ReportPropertyChanging("MerchantUrl");
+                _MerchantUrl = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MerchantUrl");
+                OnMerchantUrlChanged();
+            }
+        }
+        private global::System.String _MerchantUrl;
+        partial void OnMerchantUrlChanging(global::System.String value);
+        partial void OnMerchantUrlChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String MerchantProductName
+        {
+            get
+            {
+                return _MerchantProductName;
+            }
+            set
+            {
+                OnMerchantProductNameChanging(value);
+                ReportPropertyChanging("MerchantProductName");
+                _MerchantProductName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("MerchantProductName");
+                OnMerchantProductNameChanged();
+            }
+        }
+        private global::System.String _MerchantProductName;
+        partial void OnMerchantProductNameChanging(global::System.String value);
+        partial void OnMerchantProductNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MerchantProductImage
+        {
+            get
+            {
+                return _MerchantProductImage;
+            }
+            set
+            {
+                OnMerchantProductImageChanging(value);
+                ReportPropertyChanging("MerchantProductImage");
+                _MerchantProductImage = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MerchantProductImage");
+                OnMerchantProductImageChanged();
+            }
+        }
+        private global::System.String _MerchantProductImage;
+        partial void OnMerchantProductImageChanging(global::System.String value);
+        partial void OnMerchantProductImageChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MerchantIncentive
+        {
+            get
+            {
+                return _MerchantIncentive;
+            }
+            set
+            {
+                OnMerchantIncentiveChanging(value);
+                ReportPropertyChanging("MerchantIncentive");
+                _MerchantIncentive = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MerchantIncentive");
+                OnMerchantIncentiveChanged();
+            }
+        }
+        private global::System.String _MerchantIncentive;
+        partial void OnMerchantIncentiveChanging(global::System.String value);
+        partial void OnMerchantIncentiveChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String DeveloperName
+        {
+            get
+            {
+                return _DeveloperName;
+            }
+            set
+            {
+                OnDeveloperNameChanging(value);
+                ReportPropertyChanging("DeveloperName");
+                _DeveloperName = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("DeveloperName");
+                OnDeveloperNameChanged();
+            }
+        }
+        private global::System.String _DeveloperName;
+        partial void OnDeveloperNameChanging(global::System.String value);
+        partial void OnDeveloperNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String DeveloperProductName
+        {
+            get
+            {
+                return _DeveloperProductName;
+            }
+            set
+            {
+                OnDeveloperProductNameChanging(value);
+                ReportPropertyChanging("DeveloperProductName");
+                _DeveloperProductName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("DeveloperProductName");
+                OnDeveloperProductNameChanged();
+            }
+        }
+        private global::System.String _DeveloperProductName;
+        partial void OnDeveloperProductNameChanging(global::System.String value);
+        partial void OnDeveloperProductNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String DeveloperProductImage
+        {
+            get
+            {
+                return _DeveloperProductImage;
+            }
+            set
+            {
+                OnDeveloperProductImageChanging(value);
+                ReportPropertyChanging("DeveloperProductImage");
+                _DeveloperProductImage = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("DeveloperProductImage");
+                OnDeveloperProductImageChanged();
+            }
+        }
+        private global::System.String _DeveloperProductImage;
+        partial void OnDeveloperProductImageChanging(global::System.String value);
+        partial void OnDeveloperProductImageChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String DeveloperProductClaim
+        {
+            get
+            {
+                return _DeveloperProductClaim;
+            }
+            set
+            {
+                OnDeveloperProductClaimChanging(value);
+                ReportPropertyChanging("DeveloperProductClaim");
+                _DeveloperProductClaim = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("DeveloperProductClaim");
+                OnDeveloperProductClaimChanged();
+            }
+        }
+        private global::System.String _DeveloperProductClaim;
+        partial void OnDeveloperProductClaimChanging(global::System.String value);
+        partial void OnDeveloperProductClaimChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String DeveloperProductUrl
+        {
+            get
+            {
+                return _DeveloperProductUrl;
+            }
+            set
+            {
+                OnDeveloperProductUrlChanging(value);
+                ReportPropertyChanging("DeveloperProductUrl");
+                _DeveloperProductUrl = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("DeveloperProductUrl");
+                OnDeveloperProductUrlChanged();
+            }
+        }
+        private global::System.String _DeveloperProductUrl;
+        partial void OnDeveloperProductUrlChanging(global::System.String value);
+        partial void OnDeveloperProductUrlChanged();
+
+        #endregion
+
     }
 
     #endregion

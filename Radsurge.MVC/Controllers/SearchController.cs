@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Radsurge.MVC.Models;
+using Radsurge.MVC.EntityModel;
 
 namespace Radsurge.MVC.Controllers
 {
@@ -12,35 +13,10 @@ namespace Radsurge.MVC.Controllers
         // GET: /Search/
         public ActionResult Index(string q)
         {
-            SearchResults sr = new SearchResults();
-            sr.SearchTerm = q;
-            sr.ReturnedResults.Add(new Results
-            {
-                DeveloperName = "",
-                DeveloperProductClaim = "Play Round 1 - Get High Score",
-                DeveloperProductImage = "~/Content/Images/Results/Kimiko.png",
-                DeveloperProductName = "Kimiko Forgotten Forest",
-                DeveloperProductUrl = "",
-                MerchantIncentive = "15% Off Dipped Chocolate",
-                MerchantName = "Dipped Chocolate Designs",
-                MerchantProductImage = "~/Content/Images/Results/Dipped.jpg",
-                MerchantProductName = "Chocolate Strawberries",
-                MerchantUrl = ""
-            });
-
-            sr.ReturnedResults.Add(new Results
-            {
-                DeveloperName = "",
-                DeveloperProductClaim = "Play Round 1 - Get High Score",
-                DeveloperProductImage = "~/Content/Images/Results/Kimiko.png",
-                DeveloperProductName = "Kimiko Forgotten Forest",
-                DeveloperProductUrl = "",
-                MerchantIncentive = "Free Fresqe Sample",
-                MerchantName = "Fresqe Body Scrub",
-                MerchantProductImage = "~/Content/Images/Results/Fresqe.jpg",
-                MerchantProductName = "Fresqe Body Scrub",
-                MerchantUrl = ""
-            });
+            SearchResults sr = new SearchResults { 
+                                SearchTerm = q,
+                                ReturnedResults = new RadsurgeSQL().GetSearchResults().ToList()
+            }; 
             return View(sr);
         }
 
