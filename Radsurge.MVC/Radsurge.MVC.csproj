@@ -156,7 +156,7 @@
     <Content Include="Content\Images\Results\Fresqe.jpg" />
     <Content Include="Content\Images\Results\Kimiko.png" />
     <Content Include="Content\Images\type-away.jpg" />
-    <Content Include="Content\Images\Venn diagram.png" />
+    <Content Include="Content\Images\Venn-diagram.png" />
     <Content Include="Content\Js\bootstrap.js" />
     <Content Include="Content\Js\bootstrap.min.js" />
     <Content Include="Content\Js\grayscale.js" />
