@@ -230,6 +230,7 @@ ul.listapi li {
     height:auto;
     border-left: 1px solid #999;
     list-style-type:none;
+    margin: 0; padding: 0;
 }
 
 .txt{
