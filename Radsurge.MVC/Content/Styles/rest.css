@@ -222,13 +222,14 @@ Single styles
 }
 
 ul.listapi li {
-    height: 30px;
+    height:auto;
     border-left: 1px solid #999;
     list-style-type:none;
 }
 
 .txt{
-    padding-left:15px;
+    padding-left:10px;
+    padding-top:10px;
 }
 
 /* -----------------------
