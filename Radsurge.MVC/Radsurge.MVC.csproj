@@ -126,6 +126,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ClaimsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RestController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="EntityModel\Radsurge.Designer.cs">
@@ -167,6 +168,7 @@
     <Content Include="Content\Styles\buttons.css" />
     <Content Include="Content\Styles\grayscale.css" />
     <Content Include="Content\Styles\ratings.css" />
+    <Content Include="Content\Styles\rest.css" />
     <Content Include="Content\Styles\search.css" />
     <Content Include="Content\Styles\searchresults.css" />
     <Content Include="Content\Themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -301,6 +303,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Radsurge.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Views\Rest\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
