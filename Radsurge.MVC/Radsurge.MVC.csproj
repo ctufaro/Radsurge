@@ -153,6 +153,7 @@
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\map-marker.png" />
     <Content Include="Content\Images\market.jpg" />
+    <Content Include="Content\Images\Overview.png" />
     <Content Include="Content\Images\Results\Dipped.jpg" />
     <Content Include="Content\Images\Results\Fresqe.jpg" />
     <Content Include="Content\Images\Results\Kimiko.png" />
