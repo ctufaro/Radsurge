@@ -226,15 +226,38 @@ Single styles
 	padding-left: 5px;
 }
 
-ul.listapi li {
+/* -----------------------
+REST API Side Methods
+------------------------*/
+
+
+ul.listapi 
+{
+    -webkit-padding-start: 0px;
+}
+
+ul.listapi li 
+{
     height:auto;
-    border-left: 1px solid #999;
+    border-left: 1px solid Red;
     list-style-type:none;
 }
 
-.txt{
+ul.listapi  a:link 
+{ 
+    color: Red; 
+}
+
+ul.listapi  a:visited 
+{ 
+    color: Red; 
+}
+
+ul.listapi .txt
+{
     padding-left:10px;
     padding-top:10px;
+    color:Red;
 }
 
 /* -----------------------
