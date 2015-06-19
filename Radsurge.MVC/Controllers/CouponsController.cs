@@ -5,8 +5,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Mvc;
-using System.Web.Helpers;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace Radsurge.MVC.Controllers
 {
@@ -23,7 +23,7 @@ namespace Radsurge.MVC.Controllers
             };
 
             var response = this.Request.CreateResponse(HttpStatusCode.OK);
-            response.Content = new StringContent(Json.Encode(coupon), Encoding.UTF8, "application/json");
+            response.Content = new StringContent(JsonConvert.SerializeObject(coupon), Encoding.UTF8, "application/json");
             return response;
         }
 
