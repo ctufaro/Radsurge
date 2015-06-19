@@ -17,9 +17,9 @@ namespace Radsurge.MVC.Controllers
         {
             var coupon = new Coupon
             {
-                BigMessage = "Favorite Product Deal",
-                CompanyLogo = "Company Logo",
-                LittleMessage = "Get 15% from www.yourcompany.com"
+                big_message = "Favorite Product Deal",
+                company_logo = "Company Logo",
+                little_message = "Get 15% from www.yourcompany.com"
             };
 
             var response = this.Request.CreateResponse(HttpStatusCode.OK);
@@ -51,8 +51,8 @@ namespace Radsurge.MVC.Controllers
 
     public class Coupon
     {
-        public string BigMessage { get; set; }
-        public string LittleMessage { get; set; }
-        public string CompanyLogo { get; set; }
+        public string big_message { get; set; }
+        public string little_message { get; set; }
+        public string company_logo { get; set; }
     }
 }
