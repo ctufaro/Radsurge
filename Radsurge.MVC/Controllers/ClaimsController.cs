@@ -9,13 +9,13 @@ namespace Radsurge.MVC.Controllers
 {
     public class ClaimsController : ApiController
     {
-        // GET api/claims
+        // GET rest/claims
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/claims/5
+        // GET rest/claims/5
         public string Get(int id)
         {
             return "value";
@@ -24,16 +24,16 @@ namespace Radsurge.MVC.Controllers
         [HttpPost]
         public HttpResponseMessage Retrieve(string claim_id, string merchant_id)
         {
-            //http://localhost:50764/api/claims/retrieve?claim_id=a1b2c3&merchant_id=x4y5z6
+            //http://localhost:50764/rest/claims/retrieve?claim_id=a1b2c3&merchant_id=x4y5z6
             return Request.CreateResponse(HttpStatusCode.OK, "All Good");
         }
 
-        // PUT api/claims/5
+        // PUT rest/claims/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE api/claims/5
+        // DELETE rest/claims/5
         public void Delete(int id)
         {
         }
