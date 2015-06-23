@@ -19,7 +19,7 @@ namespace Radsurge.MVC.Controllers
             {
                 big_message = "Favorite Product Deal",
                 company_logo = "Company Logo",
-                little_message = "Get 15% from www.yourcompany.com"
+                little_message = "Get 15% from ..."
             };
 
             var response = this.Request.CreateResponse(HttpStatusCode.OK);
