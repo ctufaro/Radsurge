@@ -133,6 +133,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CouponsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RestController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="EntityModel\Radsurge.Designer.cs">
       <AutoGen>True</AutoGen>
