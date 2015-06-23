@@ -131,8 +131,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CouponsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\RestController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="EntityModel\Radsurge.Designer.cs">
@@ -172,6 +174,7 @@
     <Content Include="Content\Js\jquery.js" />
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Styles\bootstrap.min.css" />
+    <Content Include="Content\Styles\bootstrap.misc.css" />
     <Content Include="Content\Styles\buttons.css" />
     <Content Include="Content\Styles\grayscale.css" />
     <Content Include="Content\Styles\ratings.css" />
@@ -305,12 +308,14 @@
     <None Include="Content\Less\mixins.less" />
     <None Include="Content\Less\variables.less" />
     <Content Include="Views\Search\Index.cshtml" />
-    <Content Include="Views\Search\Details.cshtml" />
     <EntityDeploy Include="EntityModel\Radsurge.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Radsurge.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Views\Shared\_Radsurge.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\Rest\Index.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
