@@ -12,8 +12,9 @@ namespace Radsurge.MVC.Controllers
 {
     public class CouponsController : ApiController
     {
-        // GET rest/coupons
-        public HttpResponseMessage Get()
+        // GET api/coupons
+        [System.Web.Http.AcceptVerbs("GET")]
+        public HttpResponseMessage Show()
         {
             var coupon = new Coupon
             {
@@ -27,23 +28,39 @@ namespace Radsurge.MVC.Controllers
             return response;
         }
 
-        // GET rest/coupons/5
+        // GET api/coupons
+        [System.Web.Http.AcceptVerbs("GET")]
+        public HttpResponseMessage Status()
+        {
+            var coupon = new Coupon
+            {
+                big_message = "Favorite Product Deal2",
+                company_logo = "Company Logo2",
+                little_message = "Get 15% from2 ..."
+            };
+
+            var response = this.Request.CreateResponse(HttpStatusCode.OK);
+            response.Content = new StringContent(JsonConvert.SerializeObject(coupon), Encoding.UTF8, "application/json");
+            return response;
+        }
+
+        // GET api/coupons/5
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST rest/coupons
+        // POST api/coupons
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT rest/coupons/5
+        // PUT api/coupons/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE rest/coupons/5
+        // DELETE api/coupons/5
         public void Delete(int id)
         {
         }
