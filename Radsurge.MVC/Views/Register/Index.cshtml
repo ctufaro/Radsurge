@@ -7,59 +7,108 @@
 
 }
 
-
+<link rel="stylesheet" href='@Url.Content("~/Content/Styles/bootstrap.misc.css")'>
 <link rel="stylesheet" href='@Url.Content("~/Content/Styles/bootstrap.min.css")'>
+<script type="text/javascript" src='@Url.Content("~/Scripts/jquery-1.7.1.js")'></script>
 
 <style>
 .main{width: 95%;}
 </style>
 
-<form class="form-horizontal" action='' method="POST">
-  <fieldset>
-    <div id="legend">
-      <legend class="">Register</legend>
+<div class="container">
+    <p class="help-block">
+        Username can contain any letters or numbers, without spaces
+    </p>
+    @*<h4>Sign up as a:</h4>*@
+    <div class="row form-group product-chooser">
+    
+    	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="max-width:300px;">
+    		<div class="product-chooser-item selected">
+    			<img src="http://renswijnmalen.nl/bootstrap/desktop_mobile.png" class="img-rounded" style="max-width:100%;" alt="Mobile and Desktop">
+                @*<div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+    				<span class="title">Merchant/Developer</span>
+    				<span class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
+    				<input type="radio" name="product" value="mobile_desktop" checked="checked">
+    			</div>*@
+    			<div class="clear"></div>
+    		</div>
+    	</div>
+    	
+    	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="max-width:300px;">
+    		<div class="product-chooser-item">
+    			<img src="http://renswijnmalen.nl/bootstrap/desktop.png" class="img-rounded" style="max-width:100%;" alt="Desktop">
+                @*<div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+    				<span class="title">Consumer</span>
+    				<span class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
+    				<input type="radio" name="product" value="desktop">
+    			</div>*@
+    			<div class="clear"></div>
+    		</div>
+    	</div>  	
+    	
     </div>
-    <div class="control-group">
-      <!-- Username -->
-      <label class="control-label"  for="username">Username</label>
-      <div class="controls">
-        <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
-        <p class="help-block">Username can contain any letters or numbers, without spaces</p>
-      </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- E-mail -->
-      <label class="control-label" for="email">E-mail</label>
-      <div class="controls">
-        <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
-        <p class="help-block">Please provide your E-mail</p>
-      </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- Password-->
-      <label class="control-label" for="password">Password</label>
-      <div class="controls">
-        <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-        <p class="help-block">Password should be at least 4 characters</p>
-      </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- Password -->
-      <label class="control-label"  for="password_confirm">Password (Confirm)</label>
-      <div class="controls">
-        <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
-        <p class="help-block">Please confirm password</p>
-      </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- Button -->
-      <div class="controls">
-        <button class="btn btn-success">Register</button>
-      </div>
-    </div>
-  </fieldset>
-</form>
+    <form class="form-horizontal" action='' method="POST">
+    <fieldset>
+        <div class="control-group">
+            <!-- Username -->
+            <label class="control-label" for="username">
+                Username</label>
+            <div class="controls">
+                <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
+                <p class="help-block">
+                    Username can contain any letters or numbers, without spaces</p>
+            </div>
+        </div>
+        <div class="control-group">
+            <!-- E-mail -->
+            <label class="control-label" for="email">
+                E-mail</label>
+            <div class="controls">
+                <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+                <p class="help-block">
+                    Please provide your E-mail</p>
+            </div>
+        </div>
+        <div class="control-group">
+            <!-- Password-->
+            <label class="control-label" for="password">
+                Password</label>
+            <div class="controls">
+                <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                <p class="help-block">
+                    Password should be at least 4 characters</p>
+            </div>
+        </div>
+        <div class="control-group">
+            <!-- Password -->
+            <label class="control-label" for="password_confirm">
+                Password (Confirm)</label>
+            <div class="controls">
+                <input type="password" id="password_confirm" name="password_confirm" placeholder=""
+                    class="input-xlarge">
+                <p class="help-block">
+                    Please confirm password</p>
+            </div>
+        </div>
+        <div class="control-group">
+            <!-- Button -->
+            <div class="controls">
+                <button class="btn btn-success">
+                    Register</button>
+            </div>
+        </div>
+    </fieldset>
+    </form>
+</div>
+
+@section Scripts{
+<script type="text/javascript">
+    $(function () {
+        $('div.product-chooser').not('.disabled').find('div.product-chooser-item').on('click', function () {
+            $(this).parent().parent().find('div.product-chooser-item').removeClass('selected');
+            $(this).addClass('selected');
+            $(this).find('input[type="radio"]').prop("checked", true);
+        });
+    });
+</script>
+}
