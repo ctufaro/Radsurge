@@ -177,6 +177,7 @@
     <Content Include="Content\Styles\bootstrap.misc.css" />
     <Content Include="Content\Styles\buttons.css" />
     <Content Include="Content\Styles\grayscale.css" />
+    <Content Include="Content\Styles\nightbright.css" />
     <Content Include="Content\Styles\ratings.css" />
     <Content Include="Content\Styles\rest.css" />
     <Content Include="Content\Styles\search.css" />
@@ -316,6 +317,7 @@
     <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\Rest\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Rest\Template.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
