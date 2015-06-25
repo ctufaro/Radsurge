@@ -16,5 +16,9 @@ namespace Radsurge.MVC.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            return View("Index");
+        }
     }
 }
