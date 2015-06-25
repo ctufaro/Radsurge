@@ -33,7 +33,7 @@ namespace Radsurge.MVC.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm new password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
+        [Compare("Password", ErrorMessage = "Password and confirm password do not match.")]
+        public string Confirm { get; set; }
     }
 }
