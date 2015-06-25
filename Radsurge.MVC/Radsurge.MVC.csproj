@@ -145,7 +145,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\SearchResults.cs" />
+    <Compile Include="Models\RegisterModels.cs" />
+    <Compile Include="Models\SearchResultModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -179,7 +180,7 @@
     <Content Include="Content\Styles\grayscale.css" />
     <Content Include="Content\Styles\nightbright.css" />
     <Content Include="Content\Styles\ratings.css" />
-    <Content Include="Content\Styles\rest.css" />
+    <Content Include="Content\Styles\pagetemplate.css" />
     <Content Include="Content\Styles\search.css" />
     <Content Include="Content\Styles\searchresults.css" />
     <Content Include="Content\Themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />

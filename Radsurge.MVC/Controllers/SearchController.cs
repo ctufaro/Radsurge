@@ -13,7 +13,8 @@ namespace Radsurge.MVC.Controllers
         // GET: /Search/
         public ActionResult Index(string q)
         {
-            SearchResults sr = new SearchResults { 
+            SearchResultModels sr = new SearchResultModels
+            { 
                                 SearchTerm = q,
                                 ReturnedResults = new RadsurgeSQL().GetSearchResults().ToList()
             }; 

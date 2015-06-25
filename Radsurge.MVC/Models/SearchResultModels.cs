@@ -6,7 +6,7 @@ using Radsurge.MVC.EntityModel;
 
 namespace Radsurge.MVC.Models
 {
-    public class SearchResults
+    public class SearchResultModels
     {
         private List<Results> _returnedResults;
         public string SearchTerm { get; set; }
@@ -21,7 +21,7 @@ namespace Radsurge.MVC.Models
                 _returnedResults = value;
             }
         }
-        public SearchResults()
+        public SearchResultModels()
         {
             _returnedResults = new List<Results>();
         }

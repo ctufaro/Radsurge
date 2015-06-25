@@ -261,6 +261,15 @@ ul.listapi .txt
 }
 
 /* -----------------------
+Validation styles
+------------------------*/
+
+.field-validation-error
+{
+    color:Red;
+}
+
+/* -----------------------
 Wide styles
 ------------------------*/
 
