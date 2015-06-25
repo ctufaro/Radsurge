@@ -6,8 +6,8 @@
 @section Sidebar{
 <h3>Public API</h3>
 <ul class="listapi">
-    <li class="txt"><a href="#">GET api/coupons/show</a></li>
-    <li class="txt"><a href="#">GET api/coupons/status</a></li>
+    <li class="txt"><a href="#show">GET api/coupons/show</a></li>
+    <li class="txt"><a href="#status">GET api/coupons/status</a></li>
 </ul>
 }
 
@@ -26,43 +26,74 @@
 <h1>REST APIs</h1>
 <hr>
 
-<!-- Paragraphs -->
-<p>The REST API provides programmatic access to read Radsurge coupon data. The REST API is lightweight and will seamlessly integrate into your application; responses are available in JSON format.</p>
+<!-- Header -->
+<p>The REST API provides programmatic access to read Radsurge merchant data. The REST API is lightweight and will seamlessly integrate into your application; responses are available in JSON format.</p>
 <hr>
 
-<span>
+<!-- Call -->
+<span id="show"></span>
 <h3>GET coupons/show</h3>
-
-<p>Returns a collection of the most recent Tweets and retweets posted by the authenticating user and the users they follow. The home timeline is central to how most users interact with the Twitter service.
-Up to 800 Tweets are obtainable on the home timeline. It is more volatile for users that follow many users or follow users who tweet frequently.</p>
-
+<p>Returns the merchant and coupon data based on the supplied <code>surge_id</code>.</p>
 <h4>Resource URL</h4>
 <p><code>https://www.radsurge.com/rest/coupons/show</code></p>
-
 <h4>Parameters</h4>
 <table class="table table-striped">
 	<tbody>
 		<tr>
-			<th>count</th>
-			<td>returns count</td>
+			<th>developer_id</th>
+			<td>Your unique id generated during sign-up.</td>
+		</tr>
+		<tr>
+			<th>surge_id</th>
+			<td>The id of a given surge.</td>
 		</tr>
 	</tbody>
 </table>
-
 <h4>Example Result</h4>
 <pre><code class="json">
 [
   {
-    "coordinates": null,
-    "truncated": false,
-    "created_at": "Tue Aug 28 21:16:23 +0000 2012",
-    "favorited": false,
-    "id_str": "240558470661799936",
-    "in_reply_to_user_id_str": null
-    }
+    "developer_id": 12345,
+    "surge_id": 67890,
+    "surge_word" : "RADSURGE",
+    "merchant_name": "Uptown Funk gon' give it to you",
+    "merchant_url" : "http://merchant.biz",
+    "merchant_deal": "15% off of all funk",
+    "merchant_misc_txt" : "Act now while supplies last",
+    "merchant_logo_url" : "http://a1.radimg.com/images/logo.gif"
+  }
 ]
 </code></pre>
-</span>
+
+<hr>
+
+<!-- Call -->
+<span id="status"></span>
+<h3>GET coupons/status</h3>
+<p>Returns if a surge is active or not.</p>
+<h4>Resource URL</h4>
+<p><code>https://www.radsurge.com/rest/coupons/status</code></p>
+<h4>Parameters</h4>
+<table class="table table-striped">
+	<tbody>
+		<tr>
+			<th>developer_id</th>
+			<td>Your unique id generated during sign-up.</td>
+		</tr>
+		<tr>
+			<th>surge_id</th>
+			<td>The id of a given surge.</td>
+		</tr>
+	</tbody>
+</table>
+<h4>Example Result</h4>
+<pre><code class="json">
+[
+  {
+    "active": true
+  }
+]
+</code></pre>
 
 @section Scripts{
 <script>hljs.initHighlightingOnLoad();</script>
