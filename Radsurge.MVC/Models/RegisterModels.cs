@@ -10,7 +10,7 @@ namespace Radsurge.MVC.Models
 {
     public class RegisterModels
     {
-        [Required(ErrorMessage="*")]
+        [Required(ErrorMessage="Please select a role")]
         public string Role { get; set; }        
         
         [Required]

@@ -24,6 +24,7 @@ namespace Radsurge.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                return View("ThankYou");
             }
 
             return View("Index");
