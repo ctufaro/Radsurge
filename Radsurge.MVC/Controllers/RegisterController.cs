@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Radsurge.MVC.Models;
+using Radsurge.MVC.EntityModel;
 
 namespace Radsurge.MVC.Controllers
 {
@@ -24,7 +25,15 @@ namespace Radsurge.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                return View("ThankYou");
+                RadsurgeSQL radSQL = new RadsurgeSQL();
+                if (registerModels.Role.Equals("0"))
+                {
+                    var shit = radSQL.InsertDeveloper(registerModels.UserName, registerModels.Company, registerModels.Email, registerModels.Password);
+                }
+                else
+                {
+                    var shit = radSQL.InsertMerchant(registerModels.UserName, registerModels.Company, registerModels.Email, registerModels.Password);
+                }
             }
 
             return View("Index");

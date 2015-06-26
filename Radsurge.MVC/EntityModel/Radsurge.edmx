@@ -31,11 +31,12 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="LastName" Type="varchar" MaxLength="255" />
-          <Property Name="Description" Type="varchar(max)" />
-          <Property Name="Email" Type="varchar(max)" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Username" Type="varchar" MaxLength="255" />
+          <Property Name="Password" Type="varchar" MaxLength="255" />
+          <Property Name="Company" Type="varchar" MaxLength="255" />
           <Property Name="Url" Type="varchar" MaxLength="255" />
-          <Property Name="Keywords" Type="varchar(max)" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Listings">
           <Key>
@@ -68,14 +69,26 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="LastName" Type="varchar" MaxLength="255" />
-          <Property Name="Company" Type="varchar(max)" />
-          <Property Name="Description" Type="varchar(max)" />
-          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Username" Type="varchar" MaxLength="255" />
+          <Property Name="Password" Type="varchar" MaxLength="255" />
+          <Property Name="Company" Type="varchar" MaxLength="255" />
           <Property Name="Url" Type="varchar" MaxLength="255" />
-          <Property Name="Keywords" Type="varchar(max)" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
         </EntityType>
         <Function Name="GetSearchResults" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="InsertDeveloper" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Company" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertMerchant" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Company" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -87,6 +100,18 @@
           <EntitySet Name="MerchantProducts" EntityType="RadsurgeEFModel.MerchantProduct" />
           <EntitySet Name="Merchants" EntityType="RadsurgeEFModel.Merchant" />
           <FunctionImport Name="GetSearchResults" ReturnType="Collection(RadsurgeEFModel.Results)" />
+          <FunctionImport Name="InsertDeveloper" ReturnType="Collection(Int32)">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Company" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertMerchant" ReturnType="Collection(Int32)">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Company" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="DeveloperProduct">
           <Key>
@@ -95,7 +120,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DeveloperId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" Type="String" />
           <Property Name="Type" Type="Int32" />
           <Property Name="Url" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="ImageUrl" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
@@ -108,10 +133,11 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="LastName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="Email" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="Url" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="Keywords" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="Username" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Company" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Listing">
           <Key>
@@ -146,10 +172,10 @@
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="LastName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="Company" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="Email" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="Url" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="Keywords" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="Username" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <ComplexType Name="Results">
           <Property Type="Int32" Name="ListingId" Nullable="false" />
@@ -187,13 +213,14 @@
           <EntitySetMapping Name="Developers">
             <EntityTypeMapping TypeName="RadsurgeEFModel.Developer">
               <MappingFragment StoreEntitySet="Developers">
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Url" ColumnName="Url" />
-                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -227,14 +254,14 @@
           <EntitySetMapping Name="Merchants">
             <EntityTypeMapping TypeName="RadsurgeEFModel.Merchant">
               <MappingFragment StoreEntitySet="Merchants">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="Company" ColumnName="Company" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Url" ColumnName="Url" />
-                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -255,6 +282,8 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertDeveloper" FunctionName="RadsurgeEFModel.Store.InsertDeveloper" />
+          <FunctionImportMapping FunctionImportName="InsertMerchant" FunctionName="RadsurgeEFModel.Store.InsertMerchant" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -275,12 +304,12 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="Radsurge">
+      <Diagram Name="Radsurge" ZoomLevel="92">
         <EntityTypeShape EntityType="RadsurgeEFModel.DeveloperProduct" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5571907552083335" IsExpanded="true" />
-        <EntityTypeShape EntityType="RadsurgeEFModel.Developer" Width="1.5" PointX="2.75" PointY="0.75" Height="2.3648893229166665" IsExpanded="true" />
+        <EntityTypeShape EntityType="RadsurgeEFModel.Developer" Width="1.5" PointX="2.75" PointY="0.75" Height="2.5571907552083331" IsExpanded="true" />
         <EntityTypeShape EntityType="RadsurgeEFModel.Listing" Width="1.5" PointX="4.75" PointY="0.75" Height="2.3648893229166656" IsExpanded="true" />
         <EntityTypeShape EntityType="RadsurgeEFModel.MerchantProduct" Width="1.5" PointX="0.75" PointY="4.75" Height="2.5571907552083335" IsExpanded="true" />
-        <EntityTypeShape EntityType="RadsurgeEFModel.Merchant" Width="1.5" PointX="2.75" PointY="4.75" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="RadsurgeEFModel.Merchant" Width="1.5" PointX="2.75" PointY="4.75" Height="2.5571907552083326" IsExpanded="true" />
       </Diagram>
     </Diagrams>
   </Designer>
