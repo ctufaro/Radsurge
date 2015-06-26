@@ -1,0 +1,79 @@
+﻿ALTER TABLE Developers ALTER COLUMN Company VARCHAR(255) NULL --1
+UPDATE Developers SET Company = null --2
+UPDATE Developers SET FirstName = null, LastName = null --3
+
+ALTER TABLE Merchants ALTER COLUMN Company VARCHAR(255) NULL --1
+UPDATE Merchants SET Company = null --2
+UPDATE Merchants SET FirstName = null, LastName = null --3
+
+----------------------------------
+
+USE [RadsurgeSQL]
+GO
+/****** Object:  StoredProcedure [dbo].[InsertDeveloper]    Script Date: 06/26/2015 10:25:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[InsertDeveloper]
+	-- Add the parameters for the stored procedure here
+	@Username VARCHAR(255),
+	@Email VARCHAR(255),
+	@Password VARCHAR(255)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	IF NOT EXISTS (SELECT Email FROM Developers WHERE Email = @Email) BEGIN
+		INSERT INTO Developers (Username,Email,Password) VALUES (@Username,@Email,@Password)
+		SELECT 1
+	END
+	ELSE
+		SELECT 0
+
+END
+
+----------------------------------
+
+USE [RadsurgeSQL]
+GO
+/****** Object:  StoredProcedure [dbo].[InsertMerchant]    Script Date: 06/26/2015 10:26:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[InsertMerchant]
+	-- Add the parameters for the stored procedure here
+	@Username VARCHAR(255),
+	@Email VARCHAR(255),
+	@Password VARCHAR(255)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	IF NOT EXISTS (SELECT Email FROM Merchants WHERE Email = @Email) BEGIN
+		INSERT INTO Merchants (Username,Email,Password) VALUES (@Username,@Email,@Password)
+		SELECT 1
+	END
+	ELSE 
+		SELECT 0
+END
+
+
+

@@ -145,6 +145,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\EnumModels.cs" />
     <Compile Include="Models\RegisterModels.cs" />
     <Compile Include="Models\SearchResultModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -237,6 +238,7 @@
     <Content Include="Content\Themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\Themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\Themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Database\06262015.txt" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />

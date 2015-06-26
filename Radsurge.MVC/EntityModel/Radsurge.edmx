@@ -34,7 +34,7 @@
           <Property Name="LastName" Type="varchar" MaxLength="255" />
           <Property Name="Username" Type="varchar" Nullable="false" MaxLength="255" />
           <Property Name="Password" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="Company" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Company" Type="varchar" MaxLength="255" />
           <Property Name="Url" Type="varchar" MaxLength="255" />
           <Property Name="Email" Type="varchar" Nullable="false" MaxLength="255" />
         </EntityType>
@@ -72,20 +72,18 @@
           <Property Name="LastName" Type="varchar" MaxLength="255" />
           <Property Name="Username" Type="varchar" Nullable="false" MaxLength="255" />
           <Property Name="Password" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="Company" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Company" Type="varchar" MaxLength="255" />
           <Property Name="Url" Type="varchar" MaxLength="255" />
           <Property Name="Email" Type="varchar" Nullable="false" MaxLength="255" />
         </EntityType>
         <Function Name="GetSearchResults" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="InsertDeveloper" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Username" Type="varchar" Mode="In" />
-          <Parameter Name="Company" Type="varchar" Mode="In" />
           <Parameter Name="Email" Type="varchar" Mode="In" />
           <Parameter Name="Password" Type="varchar" Mode="In" />
         </Function>
         <Function Name="InsertMerchant" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Username" Type="varchar" Mode="In" />
-          <Parameter Name="Company" Type="varchar" Mode="In" />
           <Parameter Name="Email" Type="varchar" Mode="In" />
           <Parameter Name="Password" Type="varchar" Mode="In" />
         </Function>
@@ -102,13 +100,11 @@
           <FunctionImport Name="GetSearchResults" ReturnType="Collection(RadsurgeEFModel.Results)" />
           <FunctionImport Name="InsertDeveloper" ReturnType="Collection(Int32)">
             <Parameter Name="Username" Mode="In" Type="String" />
-            <Parameter Name="Company" Mode="In" Type="String" />
             <Parameter Name="Email" Mode="In" Type="String" />
             <Parameter Name="Password" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="InsertMerchant" ReturnType="Collection(Int32)">
             <Parameter Name="Username" Mode="In" Type="String" />
-            <Parameter Name="Company" Mode="In" Type="String" />
             <Parameter Name="Email" Mode="In" Type="String" />
             <Parameter Name="Password" Mode="In" Type="String" />
           </FunctionImport>
@@ -133,10 +129,10 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="LastName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="Email" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" Nullable="false" />
           <Property Name="Url" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Type="String" Name="Username" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Password" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Username" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="String" Name="Password" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Type="String" Name="Company" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Listing">
@@ -172,10 +168,10 @@
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="LastName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="Company" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <Property Name="Email" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="255" Unicode="false" FixedLength="false" Nullable="false" />
           <Property Name="Url" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Type="String" Name="Username" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Password" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Username" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="String" Name="Password" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <ComplexType Name="Results">
           <Property Type="Int32" Name="ListingId" Nullable="false" />

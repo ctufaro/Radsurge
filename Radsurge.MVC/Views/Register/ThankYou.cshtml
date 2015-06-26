@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Radsurge.MVC.Enums.EnumModels.Role
+
+@{
     ViewBag.Title = "ThankYou";
     Layout = "~/Views/Shared/_Radsurge.cshtml";
 }
@@ -11,4 +13,22 @@
 .main{width: 95%;}
 </style>
 
-<h2>ThankYou</h2>
+<h2>Thank You!</h2>
+<hr />
+
+@if (Model.Equals(Radsurge.MVC.Enums.EnumModels.Role.Merchant))
+  {
+  <p>An email will be sent to you containing all the details related to your new Radsurge Merchant account.</p>
+  <p>As a Merchant, Radsurge allows you to upload your coupons and have our community of developers host them in their applications.</p>  
+  }
+else if (Model.Equals(Radsurge.MVC.Enums.EnumModels.Role.Developer))
+{
+  <p>An email will be sent to you containing all the details related to your new Radsurge Developer account.</p>
+  <p>As a Developer, Radsurge allows you to search through all the merchant coupons that you wish to host in your application. Use
+  the Radsurge REST API to programmatically access this data within your application.
+  </p>  
+}
+else
+{
+  <p></p>
+  }  

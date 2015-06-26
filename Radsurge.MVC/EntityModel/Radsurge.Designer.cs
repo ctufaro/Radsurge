@@ -203,10 +203,9 @@ namespace Radsurge.MVC.EntityModel
         /// No Metadata Documentation available.
         /// </summary>
         /// <param name="username">No Metadata Documentation available.</param>
-        /// <param name="company">No Metadata Documentation available.</param>
         /// <param name="email">No Metadata Documentation available.</param>
         /// <param name="password">No Metadata Documentation available.</param>
-        public ObjectResult<Nullable<global::System.Int32>> InsertDeveloper(global::System.String username, global::System.String company, global::System.String email, global::System.String password)
+        public ObjectResult<Nullable<global::System.Int32>> InsertDeveloper(global::System.String username, global::System.String email, global::System.String password)
         {
             ObjectParameter usernameParameter;
             if (username != null)
@@ -216,16 +215,6 @@ namespace Radsurge.MVC.EntityModel
             else
             {
                 usernameParameter = new ObjectParameter("Username", typeof(global::System.String));
-            }
-    
-            ObjectParameter companyParameter;
-            if (company != null)
-            {
-                companyParameter = new ObjectParameter("Company", company);
-            }
-            else
-            {
-                companyParameter = new ObjectParameter("Company", typeof(global::System.String));
             }
     
             ObjectParameter emailParameter;
@@ -248,17 +237,16 @@ namespace Radsurge.MVC.EntityModel
                 passwordParameter = new ObjectParameter("Password", typeof(global::System.String));
             }
     
-            return base.ExecuteFunction<Nullable<global::System.Int32>>("InsertDeveloper", usernameParameter, companyParameter, emailParameter, passwordParameter);
+            return base.ExecuteFunction<Nullable<global::System.Int32>>("InsertDeveloper", usernameParameter, emailParameter, passwordParameter);
         }
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         /// <param name="username">No Metadata Documentation available.</param>
-        /// <param name="company">No Metadata Documentation available.</param>
         /// <param name="email">No Metadata Documentation available.</param>
         /// <param name="password">No Metadata Documentation available.</param>
-        public ObjectResult<Nullable<global::System.Int32>> InsertMerchant(global::System.String username, global::System.String company, global::System.String email, global::System.String password)
+        public ObjectResult<Nullable<global::System.Int32>> InsertMerchant(global::System.String username, global::System.String email, global::System.String password)
         {
             ObjectParameter usernameParameter;
             if (username != null)
@@ -268,16 +256,6 @@ namespace Radsurge.MVC.EntityModel
             else
             {
                 usernameParameter = new ObjectParameter("Username", typeof(global::System.String));
-            }
-    
-            ObjectParameter companyParameter;
-            if (company != null)
-            {
-                companyParameter = new ObjectParameter("Company", company);
-            }
-            else
-            {
-                companyParameter = new ObjectParameter("Company", typeof(global::System.String));
             }
     
             ObjectParameter emailParameter;
@@ -300,7 +278,7 @@ namespace Radsurge.MVC.EntityModel
                 passwordParameter = new ObjectParameter("Password", typeof(global::System.String));
             }
     
-            return base.ExecuteFunction<Nullable<global::System.Int32>>("InsertMerchant", usernameParameter, companyParameter, emailParameter, passwordParameter);
+            return base.ExecuteFunction<Nullable<global::System.Int32>>("InsertMerchant", usernameParameter, emailParameter, passwordParameter);
         }
 
         #endregion
@@ -326,11 +304,17 @@ namespace Radsurge.MVC.EntityModel
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="firstName">Initial value of the FirstName property.</param>
-        public static Developer CreateDeveloper(global::System.Int32 id, global::System.String firstName)
+        /// <param name="email">Initial value of the Email property.</param>
+        /// <param name="username">Initial value of the Username property.</param>
+        /// <param name="password">Initial value of the Password property.</param>
+        public static Developer CreateDeveloper(global::System.Int32 id, global::System.String firstName, global::System.String email, global::System.String username, global::System.String password)
         {
             Developer developer = new Developer();
             developer.Id = id;
             developer.FirstName = firstName;
+            developer.Email = email;
+            developer.Username = username;
+            developer.Password = password;
             return developer;
         }
 
@@ -415,7 +399,7 @@ namespace Radsurge.MVC.EntityModel
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Email
         {
@@ -427,7 +411,7 @@ namespace Radsurge.MVC.EntityModel
             {
                 OnEmailChanging(value);
                 ReportPropertyChanging("Email");
-                _Email = StructuralObject.SetValidValue(value, true);
+                _Email = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Email");
                 OnEmailChanged();
             }
@@ -463,7 +447,7 @@ namespace Radsurge.MVC.EntityModel
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Username
         {
@@ -475,7 +459,7 @@ namespace Radsurge.MVC.EntityModel
             {
                 OnUsernameChanging(value);
                 ReportPropertyChanging("Username");
-                _Username = StructuralObject.SetValidValue(value, true);
+                _Username = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Username");
                 OnUsernameChanged();
             }
@@ -487,7 +471,7 @@ namespace Radsurge.MVC.EntityModel
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Password
         {
@@ -499,7 +483,7 @@ namespace Radsurge.MVC.EntityModel
             {
                 OnPasswordChanging(value);
                 ReportPropertyChanging("Password");
-                _Password = StructuralObject.SetValidValue(value, true);
+                _Password = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Password");
                 OnPasswordChanged();
             }
@@ -981,11 +965,17 @@ namespace Radsurge.MVC.EntityModel
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="firstName">Initial value of the FirstName property.</param>
-        public static Merchant CreateMerchant(global::System.Int32 id, global::System.String firstName)
+        /// <param name="email">Initial value of the Email property.</param>
+        /// <param name="username">Initial value of the Username property.</param>
+        /// <param name="password">Initial value of the Password property.</param>
+        public static Merchant CreateMerchant(global::System.Int32 id, global::System.String firstName, global::System.String email, global::System.String username, global::System.String password)
         {
             Merchant merchant = new Merchant();
             merchant.Id = id;
             merchant.FirstName = firstName;
+            merchant.Email = email;
+            merchant.Username = username;
+            merchant.Password = password;
             return merchant;
         }
 
@@ -1094,7 +1084,7 @@ namespace Radsurge.MVC.EntityModel
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Email
         {
@@ -1106,7 +1096,7 @@ namespace Radsurge.MVC.EntityModel
             {
                 OnEmailChanging(value);
                 ReportPropertyChanging("Email");
-                _Email = StructuralObject.SetValidValue(value, true);
+                _Email = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Email");
                 OnEmailChanged();
             }
@@ -1142,7 +1132,7 @@ namespace Radsurge.MVC.EntityModel
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Username
         {
@@ -1154,7 +1144,7 @@ namespace Radsurge.MVC.EntityModel
             {
                 OnUsernameChanging(value);
                 ReportPropertyChanging("Username");
-                _Username = StructuralObject.SetValidValue(value, true);
+                _Username = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Username");
                 OnUsernameChanged();
             }
@@ -1166,7 +1156,7 @@ namespace Radsurge.MVC.EntityModel
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Password
         {
@@ -1178,7 +1168,7 @@ namespace Radsurge.MVC.EntityModel
             {
                 OnPasswordChanging(value);
                 ReportPropertyChanging("Password");
-                _Password = StructuralObject.SetValidValue(value, true);
+                _Password = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Password");
                 OnPasswordChanged();
             }

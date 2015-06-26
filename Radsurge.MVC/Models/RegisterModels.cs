@@ -14,10 +14,9 @@ namespace Radsurge.MVC.Models
         public string Role { get; set; }        
         
         [Required]
-        [Display(Name = "Username")]
+        [Display(Name = "UserName")]
         public string UserName { get; set; }
 
-        [Required]
         [Display(Name = "Company")]
         public string Company { get; set; }
 
