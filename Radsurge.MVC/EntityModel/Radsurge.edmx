@@ -30,13 +30,13 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="Username" Type="varchar" MaxLength="255" />
-          <Property Name="Password" Type="varchar" MaxLength="255" />
-          <Property Name="Company" Type="varchar" MaxLength="255" />
+          <Property Name="FirstName" Type="varchar" MaxLength="255" />
+          <Property Name="LastName" Type="varchar" MaxLength="255" />
+          <Property Name="Username" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Company" Type="varchar" Nullable="false" MaxLength="255" />
           <Property Name="Url" Type="varchar" MaxLength="255" />
-          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="255" />
         </EntityType>
         <EntityType Name="Listings">
           <Key>
@@ -68,13 +68,13 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="Username" Type="varchar" MaxLength="255" />
-          <Property Name="Password" Type="varchar" MaxLength="255" />
-          <Property Name="Company" Type="varchar" MaxLength="255" />
+          <Property Name="FirstName" Type="varchar" MaxLength="255" />
+          <Property Name="LastName" Type="varchar" MaxLength="255" />
+          <Property Name="Username" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Company" Type="varchar" Nullable="false" MaxLength="255" />
           <Property Name="Url" Type="varchar" MaxLength="255" />
-          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="255" />
         </EntityType>
         <Function Name="GetSearchResults" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="InsertDeveloper" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">

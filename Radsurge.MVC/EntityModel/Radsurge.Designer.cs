@@ -8,15 +8,15 @@
 //------------------------------------------------------------------------------
 
 using System;
-using System.ComponentModel;
-using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Linq;
-using System.Runtime.Serialization;
+using System.Data.EntityClient;
+using System.ComponentModel;
 using System.Xml.Serialization;
+using System.Runtime.Serialization;
 
 [assembly: EdmSchemaAttribute()]
+
 namespace Radsurge.MVC.EntityModel
 {
     #region Contexts
@@ -146,7 +146,6 @@ namespace Radsurge.MVC.EntityModel
         private ObjectSet<Merchant> _Merchants;
 
         #endregion
-
         #region AddTo Methods
     
         /// <summary>
@@ -190,7 +189,6 @@ namespace Radsurge.MVC.EntityModel
         }
 
         #endregion
-
         #region Function Imports
     
         /// <summary>
@@ -306,11 +304,11 @@ namespace Radsurge.MVC.EntityModel
         }
 
         #endregion
-
     }
+    
 
     #endregion
-
+    
     #region Entities
     
     /// <summary>
@@ -337,7 +335,6 @@ namespace Radsurge.MVC.EntityModel
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -536,7 +533,6 @@ namespace Radsurge.MVC.EntityModel
         partial void OnCompanyChanged();
 
         #endregion
-
     
     }
     
@@ -566,7 +562,6 @@ namespace Radsurge.MVC.EntityModel
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -765,7 +760,6 @@ namespace Radsurge.MVC.EntityModel
         partial void OnKeywordsChanged();
 
         #endregion
-
     
     }
     
@@ -795,7 +789,6 @@ namespace Radsurge.MVC.EntityModel
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -970,7 +963,6 @@ namespace Radsurge.MVC.EntityModel
         partial void OnRatingScoreChanged();
 
         #endregion
-
     
     }
     
@@ -998,7 +990,6 @@ namespace Radsurge.MVC.EntityModel
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -1197,7 +1188,6 @@ namespace Radsurge.MVC.EntityModel
         partial void OnPasswordChanged();
 
         #endregion
-
     
     }
     
@@ -1227,7 +1217,6 @@ namespace Radsurge.MVC.EntityModel
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -1426,12 +1415,10 @@ namespace Radsurge.MVC.EntityModel
         partial void OnKeywordsChanged();
 
         #endregion
-
     
     }
 
     #endregion
-
     #region ComplexTypes
     
     /// <summary>
@@ -1460,7 +1447,6 @@ namespace Radsurge.MVC.EntityModel
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -1728,10 +1714,8 @@ namespace Radsurge.MVC.EntityModel
         partial void OnDeveloperProductUrlChanged();
 
         #endregion
-
     }
 
     #endregion
-
     
 }
