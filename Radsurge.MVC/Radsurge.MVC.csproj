@@ -324,6 +324,7 @@
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Rest\Template.cshtml" />
     <Content Include="Views\Register\ThankYou.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
